@@ -4,7 +4,7 @@ module.exports = (oauth2) => {
   // Authorization uri definition
   const authorizationUri = oauth2.authorizationCode.authorizeURL({
     redirect_uri: process.env.REDIRECT_URL,
-    scope: process.env.SCOPES || 'repo,user',
+    scope: process.env.SCOPES || 'repo,read:user,user:email',
     state: randomstring.generate(32)
   })
 
